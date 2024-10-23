@@ -6,10 +6,10 @@ const session = require('express-session')
 const passport = require('passport');
 
 
-//basic express server
+// basic express server
 const app = express();
 
-//Passport config
+// Passport config
 require('./config/passport')(passport); 
 
 app.use('/favicon.png', express.static('images/favicon.png'));
@@ -43,10 +43,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Connect flash middleware
+// Connect flash middleware
 app.use(flash());
 
-//Global vars (like a custom middleware)
+// Global vars (like a custom middleware)
 app.use( (req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
@@ -54,17 +54,17 @@ app.use( (req, res, next) => {
     next();
 });
 
-//Routes
+// Routes
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
-//creating port to run our app
+// creating port to run our app
 const PORT = process.env.PORT || 5000;
 
-//for server
+// for server
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
 
-//unknown url redirect
+// unknown url redirect
 app.get("*", function(req,res){
 	req.flash("error","The page you requested does not exist. Redirected to the home page.")
 	res.redirect("/");
