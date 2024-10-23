@@ -357,7 +357,7 @@ router.get('/projectBuddyForm', ensureAuthenticated, (req, res) =>
     }
     ));
 
-//save in a separate table
+// save in a separate table
 router.post('/projectBuddyForm', async (req, res) => {
     const { yourname, skills, interests, description, instagram } = req.body;
     const email = req.user.email;
