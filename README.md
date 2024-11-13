@@ -4,4 +4,4 @@
 
 ![Screenshot_12-11-2024_185022_localhost](https://github.com/user-attachments/assets/fb6268aa-01a8-4138-958a-6da08f663504)
 
-The dashboard view, project buddy, friend/love matching and matching form screenshots will be added soon!
+The dashboard view, project buddy, chat application, friend/love matching and matching form screenshots will be added soon!
